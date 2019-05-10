@@ -1,6 +1,6 @@
 {
   "name": "quasar-app-extension-remote-dev-tools",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Vue remote devtools for Cordova and Electron apps made with Quasar",
   "author": "Heitor Ramon Ribeiro <heitor.ramon@gmail.com>",
   "license": "MIT",
