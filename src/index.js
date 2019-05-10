@@ -7,7 +7,7 @@
 
 const ip = require('ip');
 
-const { spawn } = require('child_process'),
+const { spawn } = require('child_process');
 
 function extendConf(conf) {
   conf.boot.push('~quasar-app-extension-remote-dev-tools/src/boot/devtools.js');
@@ -17,17 +17,17 @@ function extendConf(conf) {
     ...conf.build.env,
     DEVTOOLSIP: JSON.stringify(ip.address()),
   };
-};
+}
 
 module.exports = function(api) {
   api.compatibleWith('@quasar/app', '^1.0.0-beta.18');
 
-  if (api.ctx.dev === true && ['electron', 'cordova'].includes(api.ctx.mode)) {
+  if (api.ctx.dev === true && (api.ctx.mode.electron || api.ctx.mode.cordova)) {
     api.extendQuasarConf(extendConf);
   }
 
   api.beforeDev(() => {
-    console.log('Opening vue-devtools.');
+    console.log(`Opening vue-devtools for your IP: ${ip.address()}`);
     spawn('npx', ['vue-devtools']);
-  })
+  });
 };

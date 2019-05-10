@@ -5,13 +5,13 @@ This extension will help you develop your Electron and Cordova app, as it will b
 
 # Install
 ```bash
-quasar ext add quasar-app-extension-remote-dev-tools
+quasar ext add remote-dev-tools
 ```
 Quasar CLI will retrieve it from NPM and install the extension.
 
 # Uninstall
 ```bash
-quasar ext remove quasar-app-extension-remote-dev-tools
+quasar ext remove remote-dev-tools
 ```
 
 # Patreon
