@@ -24,10 +24,9 @@ module.exports = function(api) {
 
   if (api.ctx.dev === true && (api.ctx.mode.electron || api.ctx.mode.cordova)) {
     api.extendQuasarConf(extendConf);
+    api.beforeDev(() => {
+      console.log(`Opening vue-devtools for your IP: ${ip.address()}`);
+      spawn('npx', ['vue-devtools']);
+    });
   }
-
-  api.beforeDev(() => {
-    console.log(`Opening vue-devtools for your IP: ${ip.address()}`);
-    spawn('npx', ['vue-devtools']);
-  });
 };
