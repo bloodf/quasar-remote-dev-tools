@@ -15,7 +15,8 @@ function extendConf(conf) {
   conf.build.transpileDependencies.push(/quasar-app-extension-remote-dev-tools[\\/]src/);
   conf.build.env = {
     ...conf.build.env,
-    DEVTOOLSIP: JSON.stringify(ip.address()),
+    DEVTOOLS_IP: JSON.stringify(ip.address()),
+    DEVTOOLS_PORT: JSON.stringify(8098),
   };
 }
 
