@@ -9,6 +9,7 @@ function extendConf(conf) {
   conf.build.env = {
     ...conf.build.env,
     DEVTOOLS_IP: JSON.stringify(ip.address()),
+    DEVTOOLS: true,
   };
 }
 
