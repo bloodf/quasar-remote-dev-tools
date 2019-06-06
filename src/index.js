@@ -1,10 +1,3 @@
-/**
- * Quasar App Extension index/runner script
- * (runs on each dev/build)
- *
- * API: https://github.com/quasarframework/quasar/blob/master/app/lib/app-extension/IndexAPI.js
- */
-
 const ip = require('ip');
 
 const { spawn } = require('child_process');
@@ -16,7 +9,6 @@ function extendConf(conf) {
   conf.build.env = {
     ...conf.build.env,
     DEVTOOLS_IP: JSON.stringify(ip.address()),
-    DEVTOOLS_PORT: JSON.stringify(8098),
   };
 }
 
